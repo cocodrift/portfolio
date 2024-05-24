@@ -1,0 +1,328 @@
+/* Global Styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    background: #A9A9A9;
+    color: navy;
+}
+a{
+    color: white;
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Navigation Styles */
+.nav {
+    justify-content: space-between;
+    background-color: #A9A9A9;
+    padding: 10px 0;
+    color: #f0f0f0;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav ul li:last-child {
+    margin-right: 0;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+    header {
+        padding: 10px;
+    }
+    .profile h1 {
+        font-size: 1.5em;
+    }
+    .profile h2 {
+        font-size: 1em;
+    }
+    .nav ul li {
+        margin-right: 10px;
+    }
+    .ig-scan-code {
+      width: 50%;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-image: url('/images/hero.jpg'); /* Set your hero image here */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Adjust the blur amount as needed */
+    opacity: 0.7; /* Adjust the overlay opacity as needed */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    margin-bottom: 40px;
+}
+
+.hero-subtitle h2 {
+    margin-bottom: 10px;
+}
+
+.hero-subtitle p {
+    line-height: 1.6;
+}
+
+/* Card Styles */
+.card {
+    background-color:#333;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 40%;
+    color: white;
+    position: relative; /* Added position relative for positioning the image */
+}
+.profile h1 {
+    margin-bottom: 10px;
+}
+
+.profile h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.profile p {
+    margin-bottom: 0;
+}
+.profile a{
+  margin: 20%;
+  padding: 10%;
+}
+
+.profile img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px; /* Adjust the width of the image as needed */
+    border-radius: 30%; /* Makes the image circular */
+}
+
+.ig-scan-code img{
+  gap: 10px;
+  border-radius: 10%; 
+}
+
+/* Reasons Section Styles */
+#reasons ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+/* Sales Section Styles */
+#sales button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Testimonials Section Styles */
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial p {
+    margin-bottom: 0.5rem;
+}
+
+section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+/* Explore section styles */
+#explore {
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  #explore h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: black;
+  }
+  
+  .explore-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .explore-categories,
+  .explore-tags,
+  .explore-recent-posts,
+  .explore-authors,
+  .explore-interactions {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore-categories h2,
+  .explore-tags h2,
+  .explore-recent-posts h2,
+  .explore-authors h2,
+  .explore-interactions h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .explore-categories ul,
+  .explore-tags ul,
+  .explore-recent-posts ul,
+  .explore-authors ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .explore-categories ul li,
+  .explore-tags ul li,
+  .explore-recent-posts ul li,
+  .explore-authors ul li {
+    margin-bottom: 10px;
+  }
+  
+  .explore-categories ul li a,
+  .explore-tags ul li a,
+  .explore-recent-posts ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .explore-categories ul li a:hover,
+  .explore-tags ul li a:hover,
+  .explore-recent-posts ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .explore-authors{
+    gap: 2px;
+  }
+  
+  .explore-authors ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .explore-authors img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .explore-authors .author-name {
+    font-weight: bold;
+  }
+  
+  .explore-authors .author-bio {
+    display: block;
+    font-size: 14px;
+    color: #666;
+  }
+
+  
+  .trend-item,
+        .brand-item {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .trend-item img,
+        .brand-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+      .designer {
+          display: flex;
+          margin-bottom: 20px;
+      }
+      
+      .designer img {
+          width: 150px;
+          height: auto;
+          margin-right: 20px;
+          border-radius: 5px;
+      }
+      
+      .designer-info {
+          flex-grow: 1;
+      }
+      
+      .designer-info h3 {
+          font-size: 1.5em;
+          margin-bottom: 5px;
+      }
+      
+      .designer-info p {
+          font-size: 1.1em;
+          color: #333;
+      }
+      
+  

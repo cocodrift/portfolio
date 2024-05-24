@@ -1,0 +1,17 @@
+/your-project
+  /models
+    Post.js
+  /routes
+    index.js
+  /views
+    index.ejs
+    travel.ejs
+    fitness.ejs
+    shop.ejs
+    add.ejs
+  /public
+    /css
+    /js
+  .env
+  app.js
+  package.json
