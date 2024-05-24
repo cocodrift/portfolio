@@ -49,7 +49,7 @@ router.get('/shop', (req, res, next) => {
 });
 
 // Technology route
-router.get('/technolgy', (req, res, next) => {
+router.get('/technology', (req, res, next) => {
   try {
     res.render('technology');
   } catch (error) {
