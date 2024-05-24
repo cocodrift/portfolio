@@ -57,6 +57,15 @@ router.get('/technology', (req, res, next) => {
   }
 });
 
+// Cuisine route
+router.get('/cuisine', (req, res, next) => {
+  try {
+    res.render('cuisine');
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Add route
 router.get('/add', (req, res) => {
   res.render('add');

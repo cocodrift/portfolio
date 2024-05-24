@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <header>
+        <h1>Photo Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="/gallery">All</a></li>
+                <li><a href="/gallery/nature">Nature</a></li>
+                <li><a href="/gallery/animals">Animals</a></li>
+                <li><a href="/gallery/city">City</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="gallery">
+            <% photos.forEach(function(photo) { %>
+                <div class="photo">
+                    <img src="<%= photo.url %>" alt="<%= photo.alt %>">
+                    <p><%= photo.caption %></p>
+                </div>
+            <% }); %>
+        </section>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

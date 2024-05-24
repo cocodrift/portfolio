@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+    <title>Cuisines</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #f4f4f4;
+            color: #555;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <header>
+        <h1>Exploring Kenyan Cuisines</h1>
+    </header>
+    <article>
+        <p>
+            Kenyan cuisine is a rich tapestry of flavors influenced by various cultures and traditions across the country. From hearty stews to flavorful meats and vibrant vegetables, Kenyan dishes offer a delightful culinary experience.
+        </p>
+        <section>
+            <h2>Ugali and Sukuma Wiki</h2>
+            <p>
+                Ugali, a staple food in Kenya, is made from maize flour and water, cooked to a thick consistency. It is often served with Sukuma Wiki, a dish made from collard greens sautéed with onions, tomatoes, and spices.
+                <a href="https://theculturetrip.com/africa/kenya/articles/11-delicious-foods-you-have-to-eat-in-kenya/">[1]</a>
+            </p>
+        </section>
+        <section>
+            <h2>Nyama Choma</h2>
+            <p>
+                Nyama Choma, meaning "roasted meat" in Swahili, is a popular dish featuring grilled meat, typically goat or beef. It is often accompanied by a side of Kenyan-style salsa known as Kachumbari.
+                <a href="https://migrationology.com/kenyan-food-guide/">[2]</a>
+            </p>
+        </section>
+        <section>
+            <h2>Pilau</h2>
+            <p>
+                Pilau is a fragrant rice dish cooked with spices, vegetables, and meat or fish. It is a favorite during festive occasions and celebrations, offering a burst of flavors in every bite.
+                <a href="https://afrotourism.com/travelogue/kenyan-cuisine-10-kenyan-foods-should-try/">[3]</a>
+            </p>
+        </section>
+        <section>
+            <h2>Mandazi</h2>
+            <p>
+                Mandazi are deep-fried dough snacks, similar to doughnuts, often flavored with coconut milk and spices. They are enjoyed as a breakfast treat or as a snack with tea or coffee.
+                <a href="https://migrationology.com/kenyan-food-guide/">[4]</a>
+            </p>
+        </section>
+        <section>
+            <h2>Githeri</h2>
+            <p>
+                Githeri is a traditional Kenyan dish made from a mix of boiled maize and beans. It is simple yet nutritious, often seasoned with onions, tomatoes, and spices for added flavor.
+                <a href="https://theculturetrip.com/africa/kenya/articles/11-delicious-foods-you-have-to-eat-in-kenya/">[5]</a>
+            </p>
+        </section>
+    </article>
+    <%- include('partials/footer') %>
+</body>
+</html>
