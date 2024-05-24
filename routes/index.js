@@ -48,6 +48,15 @@ router.get('/shop', (req, res, next) => {
   }
 });
 
+// Technology route
+router.get('/technolgy', (req, res, next) => {
+  try {
+    res.render('technology');
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Add route
 router.get('/add', (req, res) => {
   res.render('add');
