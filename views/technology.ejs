@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technological Changes Since 2010</title>
 </head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+article {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f4f4f4;
+    color: #555;
+    padding: 10px 0;
+    text-align: center;
+}
+
+</style>
 <body>
+    <%- include('partials/navbar') %>
     <header>
         <h1>Technological Changes Since 2010</h1>
     </header>
@@ -63,10 +118,6 @@
             </p>
         </section>
     </article>
-    <footer>
-        <p>
-            Stay tuned as we navigate the ever-changing landscape of technology, where each innovation brings new possibilities and responsibilities.
-        </p>
-    </footer>
+    <%- include('partials/footer') %>
 </body>
 </html>
