@@ -11,6 +11,15 @@ router.get('/', (req, res, next) => {
   }
 });
 
+// Profile route
+router.get('/profile', (req, res, next) => {
+  try {
+    res.render('profile');
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Fashion route
 router.get('/fashion', (req, res, next) => {
   try {
