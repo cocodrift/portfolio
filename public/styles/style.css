@@ -1,13 +1,10 @@
 /* Global Styles */
 body {
     font-family: "Merienda", cursive;
-    font-optical-sizing: auto;
-    font-weight: weight;
     font-style: normal;
     margin: 0;
     padding: 0;
     background: #A9A9A9;
-    color: navy;
 }
 
 a{
