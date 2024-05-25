@@ -5,9 +5,10 @@ body {
     margin: 0;
     padding: 0;
     background: #A9A9A9;
+    font-size: 1rem;
 }
 
-a{
+a {
     color: white;
     text-decoration: underline;
 }
@@ -21,6 +22,7 @@ header {
 
 /* Navigation Styles */
 .nav {
+    display: flex;
     justify-content: space-between;
     background-color: #A9A9A9;
     padding: 10px 0;
@@ -31,10 +33,10 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .nav ul li {
-    display: inline-block;
     margin-right: 20px;
     cursor: pointer;
 }
@@ -42,7 +44,6 @@ header {
 .nav ul li:last-child {
     margin-right: 0;
 }
-
 
 /* Responsive Styles */
 @media screen and (max-width: 500px) {
@@ -62,7 +63,7 @@ header {
         margin-right: 10px;
     }
     .ig-scan-code {
-      width: 50%;
+        width: 50%;
     }
 }
 
@@ -83,25 +84,32 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 30px;
-    background-image: url('/images/hero.jpg'); /* Set your hero image here */
+    background-image: url('/images/hero.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(5px); /* Adjust the blur amount as needed */
-    opacity: 0.7; /* Adjust the overlay opacity as needed */
+    filter: blur(5px);
+    opacity: 0.7;
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero-title {
     margin-bottom: 20px;
+    font-size: 2.5rem;
 }
 
 .hero-subtitle {
     margin-bottom: 40px;
+    font-size: 1.5rem;
 }
 
 .hero-subtitle h2 {
@@ -114,43 +122,45 @@ header {
 
 /* Card Styles */
 .card {
-    background-color:#333;
+    background-color: #333;
     display: inline-block;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     width: 40%;
     color: white;
-    position: relative; /* Added position relative for positioning the image */
+    position: relative;
 }
 .profile h1 {
     margin-bottom: 10px;
+    font-size: 2rem;
 }
 
 .profile h2 {
-    font-size: 1.2em;
+    font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
 .profile p {
     margin-bottom: 0;
 }
-.profile a{
-  margin: 20%;
-  padding: 10%;
+
+.profile a {
+    margin: 20%;
+    padding: 10%;
 }
 
 .profile img {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 50px; /* Adjust the width of the image as needed */
-    border-radius: 30%; /* Makes the image circular */
+    width: 50px;
+    border-radius: 30%;
 }
 
-.ig-scan-code img{
-  gap: 10px;
-  border-radius: 10%; 
+.ig-scan-code img {
+    gap: 10px;
+    border-radius: 10%;
 }
 
 /* Reasons Section Styles */
@@ -168,7 +178,7 @@ header {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
@@ -194,135 +204,132 @@ section {
 #explore {
     padding: 20px;
     background-color: #f8f8f8;
-  }
-  
-  #explore h1 {
+}
+
+#explore h1 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 2rem;
     color: black;
-  }
-  
-  .explore-content {
+}
+
+.explore-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
-  }
-  
-  .explore-categories,
-  .explore-tags,
-  .explore-recent-posts,
-  .explore-authors,
-  .explore-interactions {
+}
+
+.explore-categories,
+.explore-tags,
+.explore-recent-posts,
+.explore-authors,
+.explore-interactions {
     background-color: #fff;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .explore-categories h2,
-  .explore-tags h2,
-  .explore-recent-posts h2,
-  .explore-authors h2,
-  .explore-interactions h2 {
+}
+
+.explore-categories h2,
+.explore-tags h2,
+.explore-recent-posts h2,
+.explore-authors h2,
+.explore-interactions h2 {
     margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
-  .explore-categories ul,
-  .explore-tags ul,
-  .explore-recent-posts ul,
-  .explore-authors ul {
+    font-size: 1.5rem;
+}
+
+.explore-categories ul,
+.explore-tags ul,
+.explore-recent-posts ul,
+.explore-authors ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .explore-categories ul li,
-  .explore-tags ul li,
-  .explore-recent-posts ul li,
-  .explore-authors ul li {
+}
+
+.explore-categories ul li,
+.explore-tags ul li,
+.explore-recent-posts ul li,
+.explore-authors ul li {
     margin-bottom: 10px;
-  }
-  
-  .explore-categories ul li a,
-  .explore-tags ul li a,
-  .explore-recent-posts ul li a {
+}
+
+.explore-categories ul li a,
+.explore-tags ul li a,
+.explore-recent-posts ul li a {
     color: #333;
     text-decoration: none;
-  }
-  
-  .explore-categories ul li a:hover,
-  .explore-tags ul li a:hover,
-  .explore-recent-posts ul li a:hover {
-    text-decoration: underline;
-  }
+}
 
-  .explore-authors{
+.explore-categories ul li a:hover,
+.explore-tags ul li a:hover,
+.explore-recent-posts ul li a:hover {
+    text-decoration: underline;
+}
+
+.explore-authors {
     gap: 2px;
-  }
-  
-  .explore-authors ul li {
+}
+
+.explore-authors ul li {
     display: flex;
     align-items: center;
-  }
-  
-  .explore-authors img {
+}
+
+.explore-authors img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
-  }
-  
-  .explore-authors .author-name {
+}
+
+.explore-authors .author-name {
     font-weight: bold;
-  }
-  
-  .explore-authors .author-bio {
+}
+
+.explore-authors .author-bio {
     display: block;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #666;
-  }
+}
 
-  
-  .trend-item,
-        .brand-item {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.trend-item,
+.brand-item {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        .trend-item img,
-        .brand-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
+.trend-item img,
+.brand-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 
-      .designer {
-          display: flex;
-          margin-bottom: 20px;
-      }
-      
-      .designer img {
-          width: 150px;
-          height: auto;
-          margin-right: 20px;
-          border-radius: 5px;
-      }
-      
-      .designer-info {
-          flex-grow: 1;
-      }
-      
-      .designer-info h3 {
-          font-size: 1.5em;
-          margin-bottom: 5px;
-      }
-      
-      .designer-info p {
-          font-size: 1.1em;
-          color: #333;
-      }
-      
-  
+.designer {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.designer img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.designer-info {
+    flex-grow: 1;
+}
+
+.designer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.designer-info p {
+    font-size: 1.1rem;
+    color: #333;
+}
