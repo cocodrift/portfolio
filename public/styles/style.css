@@ -64,7 +64,9 @@ body {
   
   .ig-scan-code {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
     margin-top: 20px;
   }
