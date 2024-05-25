@@ -96,45 +96,73 @@ body {
     background-color: #555;
   }
   
-  /* Hero section styles */
-  .hero {
+  /* Responsive Styles */
+@media screen and (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+    header {
+        padding: 10px;
+    }
+    .profile h1 {
+        font-size: 1.5em;
+    }
+    .profile h2 {
+        font-size: 1em;
+    }
+    .nav ul li {
+        margin-right: 10px;
+    }
+    .ig-scan-code {
+      width: 50%;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
     position: relative;
-    background: url('/images/hero-background.jpg') no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+    overflow: hidden;
+    padding: 100px 0;
     text-align: center;
-  }
-  
-  .hero-overlay {
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero-content {
-    position: relative;
+    border-radius: 30px;
+    background-image: url('/images/hero.jpg'); /* Set your hero image here */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Adjust the blur amount as needed */
+    opacity: 0.7; /* Adjust the overlay opacity as needed */
     z-index: 1;
-  }
-  
-  .hero-title {
-    font-size: 48px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
     margin-bottom: 20px;
-  }
-  
-  .hero-subtitle h2 {
-    font-size: 24px;
+}
+
+.hero-subtitle {
+    margin-bottom: 40px;
+}
+
+.hero-subtitle h2 {
     margin-bottom: 10px;
-  }
-  
-  .hero-subtitle p {
-    font-size: 16px;
-  }
+}
+
+.hero-subtitle p {
+    line-height: 1.6;
+}
   
   /* Main content styles */
   main {
