@@ -11,14 +11,17 @@ router.get('/', (req, res, next) => {
   }
 });
 
-// Home route
+// Checkitout route
 router.get('/make-money', (req, res, next) => {
   try {
-    res.render('checkitout');
+    // Additional data to pass to the template
+    const section = 'make-money-online';
+    res.render('checkitout', { section });
   } catch (error) {
     next(error);
   }
 });
+
 
 // Profile route
 router.get('/profile', (req, res, next) => {
