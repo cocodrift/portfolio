@@ -11,6 +11,15 @@ router.get('/', (req, res, next) => {
   }
 });
 
+// Home route
+router.get('/make-money', (req, res, next) => {
+  try {
+    res.render('checkitout');
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Profile route
 router.get('/profile', (req, res, next) => {
   try {
