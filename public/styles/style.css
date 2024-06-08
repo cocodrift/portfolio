@@ -188,9 +188,41 @@ body {
     line-height: 1.6;
   }
   
-  /* Main content styles */
-  main {
+
+  #check-this-out {
+    background-color: #f9f9f9;
     padding: 20px;
+    text-align: center;
+  }
+  
+  #check-this-out h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .check-this-out-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .check-item {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .check-item h2 {
+    font-size: 1.5em;
+  }
+  
+  .check-item p {
+    font-size: 1em;
+    color: #555;
   }
   
   #explore {
