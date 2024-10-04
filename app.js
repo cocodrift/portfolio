@@ -30,6 +30,10 @@ mongoose.connect(mongoURI, {
 const appRouter = require('./routes/index');
 app.use('/', appRouter);
 
+const adminRouter = require('./routes/admin');
+app.use('/', adminRouter); // Add admin route
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -1,26 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/post'); // Adjust the path if necessary
+const Article = require('../models/post'); // Import Article model
 
-// Home route
-router.get('/', (req, res, next) => {
+// Route to load and display articles
+router.get('/', async (req, res) => {
   try {
-    res.render('index');
+    const articles = await Article.find().sort({ publishedAt: -1 }); // Load all articles
+    res.render('index', { articles }); // Pass articles to the view
   } catch (error) {
-    next(error);
+    res.status(500).send('Error loading articles');
   }
 });
 
-// Checkitout route
-router.get('/make-money', (req, res, next) => {
-  try {
-    // Additional data to pass to the template
-    const section = 'make-money-online';
-    res.render('checkitout', { section });
-  } catch (error) {
-    next(error);
-  }
-});
 
 
 // Profile route
@@ -32,14 +23,6 @@ router.get('/profile', (req, res, next) => {
   }
 });
 
-// Fashion route
-router.get('/fashion', (req, res, next) => {
-  try {
-    res.send('Hello, this page is in development');
-  } catch (error) {
-    next(error);
-  }
-});
 
 // Travel route
 router.get('/travel', (req, res, next) => {
@@ -84,23 +67,6 @@ router.get('/cuisine', (req, res, next) => {
     res.render('cuisine');
   } catch (error) {
     next(error);
-  }
-});
-
-// Add route
-router.get('/add', (req, res) => {
-  res.render('add');
-});
-
-router.post('/add', async (req, res) => {
-  const { title, content } = req.body;
-  try {
-    const newPost = new Post({ title, content });
-    await newPost.save();
-    res.redirect('/shop');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
   }
 });
 

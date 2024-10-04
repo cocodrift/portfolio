@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Add Article</title>
+</head>
+<body>
+  <header>
+    <h1>Add a New Article</h1>
+  </header>
+
+  <main>
+    <form action="/admin" method="POST">
+      <div>
+        <label for="title">Article Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+
+      <div>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="10" required></textarea>
+      </div>
+
+      <div>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+      </div>
+
+      <div>
+        <label for="publishedAt">Published Date:</label>
+        <input type="date" id="publishedAt" name="publishedAt">
+      </div>
+
+      <button type="submit">Add Article</button>
+    </form>
+  </main>
+</body>
+</html>
