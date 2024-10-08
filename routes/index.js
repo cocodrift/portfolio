@@ -6,7 +6,7 @@ const Project = require('../models/Project');
 router.get('/', async (req, res) => {
   try {
     const projects = await Project.find({});
-    res.render('home', { projects });
+    res.render('index', { projects });
   } catch (error) {
     res.status(500).send('Server Error');
   }
