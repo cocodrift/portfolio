@@ -31,7 +31,7 @@ const appRouter = require('./routes/index');
 app.use('/', appRouter);
 
 const adminRouter = require('./routes/admin');
-app.use('/', adminRouter); // Add admin route
+app.use('/admin', adminRouter); // Set admin route under '/admin'
 
 
 // Start the server
