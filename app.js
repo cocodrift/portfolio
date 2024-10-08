@@ -8,8 +8,6 @@ require('dotenv').config();
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
-
-// Set the views directory
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -31,8 +29,7 @@ const appRouter = require('./routes/index');
 app.use('/', appRouter);
 
 const adminRouter = require('./routes/admin');
-app.use('/admin', adminRouter); // Set admin route under '/admin'
-
+app.use('/admin', adminRouter);
 
 // Start the server
 app.listen(port, () => {

@@ -1,28 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const Article = require('../models/Article'); // Import Article model
+const Project = require('../models/Project');
 
-// Route to render admin page
+// Admin dashboard to add new projects
 router.get('/admin', (req, res) => {
-  res.render('admin'); // Render the admin.ejs form
+  res.render('admin');
 });
 
-// Route to handle article submission
-router.post('/admin', async (req, res) => {
-  const { title, content, author, publishedAt } = req.body;
+// Route to handle form submission
+router.post('/admin/add', async (req, res) => {
+  const { title, description, link, imageUrl, techStack } = req.body;
+  const newProject = new Project({
+    title,
+    description,
+    link,
+    imageUrl,
+    techStack: techStack.split(',') // Convert to array
+  });
 
   try {
-    const newArticle = new Article({
-      title,
-      content,
-      author,
-      publishedAt: publishedAt || Date.now(),
-    });
-    await newArticle.save(); // Save new article to the database
-    res.redirect('/admin'); // Redirect back to admin page after saving
+    await newProject.save();
+    res.redirect('/');
   } catch (error) {
-    console.error('Error saving article:', error);
-    res.status(500).send('Error saving article');
+    res.status(500).send('Error saving project');
   }
 });
 
