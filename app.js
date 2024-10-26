@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 const appRouter = require('./routes/index');
 app.use('/', appRouter);
 
-const adminRouter - require('./routes/admin'); 
+const adminRouter = require('./routes/admin'); 
 app.use('/admin', adminRouter);
 
 // Start the server
