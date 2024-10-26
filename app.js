@@ -4,8 +4,6 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-require('dotenv').config();
-
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -20,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 // Import routes
 const appRouter = require('./routes/index');
 app.use('/', appRouter);
+
+const adminRouter - require('./routes/admin'); 
+app.use('/admin', adminRouter);
 
 // Start the server
 app.listen(port, () => {
