@@ -1,18 +1,108 @@
-<% include layout %>
-<section class="intro">
-  <h1>Welcome to My Portfolio</h1>
-  <p>Check out my projects below.</p>
-</section>
-<section class="projects">
-  <% if (projects.length > 0) { %>
-    <% projects.forEach(project => { %>
-      <div class="project">
-        <h2><%= project.title %></h2>
-        <p><%= project.description %></p>
-        <a href="<%= project.link %>">View Project</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <title>The M's Hub</title>
+  <meta name="description" content="Explore the latest trends in fitness, fashion, technology, and more at The M's Hub. Join our community today!">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>M's Hub Ke</h1>
+  </header>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="check-this-out">
+      <h1>Check This Out</h1>
+      <div class="check-this-out-content">
+        <div class="check-item">
+          <h2><a href="/make-money">Make Money Online</a></h2>
+          <p>Discover various ways to earn money online, from freelance work to starting your own business. Unlock the potential of the digital economy and start earning today!</p>
+        </div>
+        <div class="check-item">
+          <h2><a href="/study">Study Online</a></h2>
+          <p>Access a wide range of online courses and educational resources. Whether you're looking to learn a new skill or earn a degree, our platform offers the tools you need.</p>
+        </div>
+        <div class="check-item">
+          <h2><a href="/shop">Shop Online</a></h2>
+          <p>Experience the convenience of online shopping with a variety of products at your fingertips. From fashion to electronics, find everything you need from the comfort of your home.</p>
+        </div>
       </div>
-    <% }) %>
-  <% } else { %>
-    <p>No projects yet. Stay tuned!</p>
-  <% } %>
-</section>
+    </section>
+
+    <section class="hero">
+      <div class="hero-overlay"></div> <!-- Add overlay element -->
+      <div class="hero-content">
+        <h1 class="hero-title">Trends, you MusT!</h1>
+        <div class="hero-subtitle">
+          <h2><a href="/fitness">Fitness</a></h2>
+          <p>Imagine feeling energized, healthy, and confident every day. With our expert-led fitness program, I'll give you a guide to boost your energy, improve your health, and gain confidence. <br> Join us and start your transformative fitness journey today!</p>
+        </div>
+        <div class="hero-subtitle">
+          <h2><a href="/fashion">Fashion and Design</a></h2>
+          <p>Picture yourself stepping out with confidence, expressing your unique style effortlessly. Our fashion line not only enhances your look but also empowers you to embrace your individuality. <br> Elevate your wardrobe and self-expression with us today!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore">
+      <h1>Explore</h1>
+      <div class="explore-content">
+        <!-- Add Categories or Topics (Element 1) -->
+        <div class="explore-categories">
+          <h2>Categories</h2>
+          <ul>
+            <li><a href="/technology">Technology</a></li>
+            <li><a href="https://www.youtube.com/@mark_Ke">Lifestyle</a></li>
+            <li><a href="/travel">Travel</a></li>
+            <!-- Add more categories as needed -->
+          </ul>
+        </div>
+
+        <!-- Add Popular Tags (Element 3) -->
+        <div class="explore-tags">
+          <h2>Popular Tags</h2>
+          <ul>
+            <li><a href="/fitness">Fitness</a></li>
+            <li><a href="/cuisine">Cuisine</a></li>
+            <li><a href="/photography">Photography</a></li>
+            <!-- Add more tags as needed -->
+          </ul>
+        </div>
+
+        <!-- Add Featured Authors (Element 8) -->
+        <div class="explore-authors">
+          <h2>Featured Authors</h2>
+          <ul>
+            <li>
+              <img src="/images/pp.jpg" alt="Author 1">
+              <span class="author-name">Mark Mwaniki</span>
+              <span class="author-bio">Front-end developer <br> Electrical Technician <br> Fitness Instructor</span>
+            </li>
+            <!-- Add more authors as needed -->
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <%- include('partials/footer') %>
+  </footer>
+
+  <script src="/scripts/main.js"></script> <!-- Include a JavaScript file if needed -->
+</body>
+</html>

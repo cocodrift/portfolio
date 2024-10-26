@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+        <title>The M's Hub - Fitnes</title>
+        <link rel="stylesheet" href="/styles/style.css">
+        <style>
+
+        @media screen and (max-width: 500px) {
+            .card {
+                width: 100%;
+            }
+            header {
+                padding: 10px;
+            }
+            .profile h1 {
+                font-size: 1.5em;
+            }
+            .profile h2 {
+                font-size: 1em;
+            }
+            .nav ul li {
+                margin-right: 10px;
+            }
+        }
+
+        .fitness {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .fitness::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background-color: aliceblue;
+            background-size: cover;
+            background-position: center;
+            filter: blur(35px);
+            opacity: 1.7;
+            z-index: -1;
+        }
+
+        .fitness h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .fitness h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .fitness ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fitness li {
+            margin-bottom: 10px;
+        }
+
+        .fitness button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .fitness button:hover {
+            background-color: #2980b9;
+        }
+
+        .fitness video {
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .fitness section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        video {
+            width: 50%;
+        }
+
+        .slide {
+            background-color: lightblue;
+            border-radius: 50px;
+        }
+
+        .card {
+            background-color: aliceblue;
+            color: black;
+        }
+        img {
+           max-width: 100%;
+           height: auto;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="fitness">
+        <section class="card">
+            <img src="/images/upper.jpg" alt="Uppre-body">
+        </section>
+        
+        <section class="slide">
+            <h2>Reasons to Prioritize Fitness</h2>
+            <p>
+                <strong>Health Benefits:</strong> Better cardiovascular health, stronger muscles and bones, improved immune function, and longevity.<br>
+                <strong>Energy and Vitality:</strong> Increased energy, alertness, and ease in handling daily tasks.<br>
+                <strong>Mental Well-being:</strong> Endorphins boost mood, reduce stress, and improve mental clarity.<br>
+                <strong>Weight Management:</strong> Maintains healthy weight and reduces risk of obesity-related diseases.<br>
+                <strong>Improved Self-confidence:</strong> Achieving fitness goals boosts self-esteem and confidence.<br>
+                <strong>Quality of Life:</strong> Enhances mobility, flexibility, and functional strength.<br>
+                <strong>Disease Prevention:</strong> Lowers risk of chronic conditions like diabetes, heart disease, and cancer.<br>
+                <strong>Social Connections:</strong> Encourages social interactions and support networks.<br>
+                <strong>Better Sleep:</strong> Improves sleep quality and regulates sleep patterns.<br>
+                <strong>Long-term Independence:</strong> Reduces risk of falls, injuries, and age-related decline.
+            </p>
+        </section>
+
+        <section id="sales">
+            <h2>Workout Plans</h2>
+            <p>Explore our range of workout plans designed to help you achieve your fitness goals.</p>
+            <button><a href="/shop">View Plans</a></button>
+        </section>
+
+        <section class="slide" id="home-workouts">
+            <h2>Home Workouts (Bodyweight)</h2>
+            <p>For most people, at-home solo workouts mean bodyweight-only exercises rather than studio classes and gym sessions that call for weights and other gear.</p>
+            <p>Bodyweight workouts can be highly effective. They challenge your form, offering opportunities for improvement without needing gear or ample space. Below are insights into top bodyweight exercises for a comprehensive strength training regimen at home.</p> 
+
+            <div id="prefers">
+                <h3>I Prefer </h3>
+                <h1>AIR SQUATS</h1>
+                <video autoplay loop playsinline muted aria-label="squat" src="/videos/squat.mp4"></video>
+                <div class="card">
+                    <h2>Steps</h2>
+                    <p><strong>Step 1:</strong> Stand with feet shoulder-width apart. Lower your hips downward and backward, as if sitting in a chair. Descend as far as comfortable while maintaining the natural arch of your lower back.</p>
+                    <p><strong>Step 2:</strong> Push through your feet to rise back to a standing position. Keep weight centered in your heels.</p>
+                    <p>Perform repetitions, keeping chest upright and core engaged. Feel significant engagement in lower body and abdominal muscles.</p>
+                </div>
+                <h1>PUSH-UPS</h1>
+                <video autoplay loop playsinline muted aria-label="pushup" src="/videos/pushups.mp4"></video>
+                <div class="card">
+                    <h2>Steps</h2>
+                    <p><strong>Step 1:</strong> Assume a plank position with shoulders above wrists, forming a straight line from shoulders to heels. Engage core.</p>
+                    <p><strong>Step 2:</strong> Lower body by bending elbows at a 45-degree angle.</p>
+                    <p><strong>Step 3:</strong> Push back up while maintaining a strong plank. Repeat.</p>
+                    <p>Maintain a 45-degree angle during the descent. For modification, perform with hands elevated. Increase challenge by slowing down the lowering phase.</p>
+                </div>
+                <h1>BURPEES</h1>
+                <video autoplay loop playsinline muted aria-label="burpee" src="/videos/burpee.mp4"></video>
+                <div class="card">
+                    <h2>Steps</h2>
+                    <p><strong>Step 1:</strong> Squat down, place hands on the ground, and jump feet back to a push-up position.</p>
+                    <p><strong>Step 2:</strong> Lower body to the ground, then push back up. Jump feet forward to meet hands.</p>
+                    <p><strong>Step 3:</strong> Jump up, clapping hands overhead. Land softly and repeat.</p>
+                    <p>Keep core tight and spine neutral. For modification, step instead of jumping, and come to toes at the top instead of hopping. Increase intensity by focusing on speed.</p>
+                    <h3>For more, check out our <a href="/shop/fitness/programs">Workout plans</a></h3>
+                </div>
+            </div>
+
+            <div id="advantages">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>Convenience and accessibility</li>
+                    <li>No need for expensive equipment</li>
+                    <li>Can be done anytime, anywhere</li>
+                </ul>
+            </div>
+            <div id="disadvantages">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li>Limited variety of exercises</li>
+                    <li>Potential lack of motivation without a gym environment</li>
+                </ul>
+            </div>
+            <p>
+                Bodyweight workouts are cost-effective, versatile, and target all major muscle groups. They can be tailored to suit any fitness level. Whether you're looking to intensify or modify your routine, consider adding these exercises to your next home workout session.
+            </p>
+        </section>
+
+        <section id="weight-training">
+            <h2>Weight Training (Gym)</h2>
+            <p>Find a trainer who specializes in weight training and has experience with clients at your fitness level. They can create personalized workout plans, teach proper techniques, and provide guidance on nutrition and recovery. A good trainer will set realistic goals, track progress, and ensure safety.</p>
+            <div id="advantages">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>Allows for progressive overload</li>
+                    <li>Can target specific muscle groups effectively</li>
+                    <li>Access to a wide range of equipment</li>
+                </ul>
+            </div>
+            <div id="disadvantages">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li>Requires a gym membership or access to equipment</li>
+                    <li>Potential risk of injury if not done with proper form</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Comparing Bodyweight Exercises and Weightlifting</h2>
+            <h3>Resistance Type:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Utilize body weight as resistance (e.g., push-ups, squats).</li>
+                <li><strong>Weights in the Gym:</strong> Use external weights (e.g., dumbbells, barbells).</li>
+            </ul>
+            <h3>Equipment:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Minimal to no equipment needed.</li>
+                <li><strong>Weights in the Gym:</strong> Require gym equipment.</li>
+            </ul>
+            <h3>Progression:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Progress by variations or increasing reps.</li>
+                <li><strong>Weights in the Gym:</strong> Progress by lifting heavier weights.</li>
+            </ul>
+            <h3>Muscle Activation:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Engage multiple muscle groups, enhancing functional strength.</li>
+                <li><strong>Weights in the Gym:</strong> Allow targeted muscle isolation for specific gains.</li>
+            </ul>
+            <h3>Portability:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Highly portable, suitable for anywhere.</li>
+                <li><strong>Weights in the Gym:</strong> Less portable, need equipment.</li>
+            </ul>
+            <h3>Skill Requirement:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Focus on mastering form with less initial skill.</li>
+                <li><strong>Weights in the Gym:</strong> Require learning proper lifting techniques.</li>
+            </ul>
+            <h3>Variety:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Offer diverse variations and progressions.</li>
+                <li><strong>Weights in the Gym:</strong> Provide various exercises for specific muscle groups.</li>
+            </ul>
+            <h3>Intensity:</h3>
+            <ul>
+                <li><strong>Bodyweight Exercises:</strong> Can be challenging with advanced variations.</li>
+                <li><strong>Weights in the Gym:</strong> Allow precise control over resistance for progressive gains.</li>
+            </ul>
+        </section>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>
