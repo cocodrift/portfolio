@@ -18,9 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // Import routes
 const appRouter = require('./routes/index');
 app.use('/', appRouter);
-
-const adminRouter = require('./routes/admin'); 
-app.use('/admin', adminRouter);
+ 
 
 // Start the server
 app.listen(port, () => {

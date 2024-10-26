@@ -1,29 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const Project = require('../models/Project');
+const adminController = require('../controllers/adminController');
+const isAuthenticated = require('../middleware/isAuthenticated');
 
-// Admin dashboard to add new projects
-router.get('/admin', (req, res) => {
-  res.render('admin');
-});
+// Display add Post form
+router.get('/addPost', isAuthenticated, adminController.getAddPost);
 
-// Route to handle form submission
-router.post('/admin/add', async (req, res) => {
-  const { title, description, link, imageUrl, techStack } = req.body;
-  const newProject = new Project({
-    title,
-    description,
-    link,
-    imageUrl,
-    techStack: techStack.split(',') // Convert to array
-  });
+// Handle adding a new Post
+router.post('/addPost', isAuthenticated, adminController.postAddPost);
 
-  try {
-    await newProject.save();
-    res.redirect('/');
-  } catch (error) {
-    res.status(500).send('Error saving project');
-  }
-});
+// Display orders
+router.get('/orders', isAuthenticated, adminController.getOrders);
+
+// Display today's order summary
+router.get('/order-summary', isAuthenticated, adminController.getOrderSummary);
+
+// Display edit Post form
+router.get('/editPost/:id', isAuthenticated, adminController.getEditPost);
+
+// Handle editing a Post
+router.post('/editPost/:id', isAuthenticated, adminController.postEditPost);
+
+// Handle  deleting a Post
+router.post('/deletePost/:id', isAuthenticated, adminController.deletePost);
+
+// Assuming you have a router defined in your admin routes file
+router.post('/orders/clear/:id', isAuthenticated, adminController.clearOrder);
+
 
 module.exports = router;
