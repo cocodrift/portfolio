@@ -1,25 +1,50 @@
 const express = require('express');
 const router = express.Router();
-const Project = require('../models/Project');
+const Post = require('../models/post'); // Adjust the path if necessary
 
 // Home route
-router.get('/', async (req, res) => {
+router.get('/', (req, res, next) => {
   try {
-    const projects = await Project.find({});
-    res.render('index', { projects });
+    res.render('index');
   } catch (error) {
-    res.status(500).send('Server Error');
+    next(error);
   }
 });
 
-// Portfolio page
-router.get('/portfolio', async (req, res) => {
+
+// Profile route
+router.get('/profile', (req, res, next) => {
   try {
-    const projects = await Project.find({});
-    res.render('profile', { projects });
+    res.render('profile');
   } catch (error) {
-    res.status(500).send('Server Error');
+    next(error);
   }
+});
+
+// Travel route
+router.get('/travel', (req, res, next) => {
+  try {
+    res.render('travel');
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Fitness route
+router.get('/fitness', (req, res, next) => {
+  try {
+    res.render('fitness');
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+
+// Error handling middleware
+router.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 module.exports = router;
