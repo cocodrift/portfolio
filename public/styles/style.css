@@ -148,7 +148,7 @@ header {
 
 /* Hero Section Styles */
 .hero {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   padding: 100px 0;
   text-align: center;
