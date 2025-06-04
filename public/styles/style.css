@@ -241,3 +241,54 @@ header {
     max-width: 320px;
   }
 }
+
+main {
+  padding: 2rem 1rem;
+}
+
+.card.profile > * {
+  margin-bottom: 1rem;
+}
+
+.card.profile .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card.profile .social-links a {
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.card.profile .social-links a:hover {
+  background: #555;
+}
+
+.projects {
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.projects ul {
+  padding-left: 0;
+}
+
+.projects li {
+  margin-bottom: 1.5rem;
+}
+
+.projects li p {
+  margin-top: 0.5rem;
+}
+
+.ig-scan-code {
+  margin-top: 3rem;
+  justify-content: center;
+}
+
