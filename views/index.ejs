@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The M's Hub</title>
-  <meta name="description" content="Explore the latest trends in fitness, fashion, technology, and more at The M's Hub. Join our community today!">
-  <link rel="stylesheet" href="/styles/style.css">
+  <meta name="description" content="Explore the latest trends in fitness, fashion, technology, and more at The M's Hub. Join our community today!" />
+  <link rel="icon" href="/images/pp.jpg" type="image/x-icon" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet" />
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/style.css" />
 </head>
 <body>
   <header>
     <h1>M's Hub Ke</h1>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
   </header>
 
   <nav class="nav">
@@ -25,48 +33,41 @@
   </nav>
 
   <main>
-    <section class="hero">
-      <div class="hero-overlay"></div> <!-- Add overlay element -->
+    <section class="hero" data-aos="fade-in" data-aos-duration="1000">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">Trends, you MusT!</h1>
         <div class="hero-subtitle">
           <h2><a href="/fitness">Fitness</a></h2>
-          <p>Imagine feeling energized, healthy, and confident every day. With our expert-led fitness program, I'll give you a guide to boost your energy, improve your health, and gain confidence. <br> Join us and start your transformative fitness journey today!</p>
+          <p>Imagine feeling energized, healthy, and confident every day. With our expert-led fitness program, you’ll gain energy, health, and confidence. Join us today!</p>
         </div>
+      </div>
     </section>
 
-    <section id="explore">
+    <section id="explore" data-aos="fade-up">
       <h1>Explore</h1>
       <div class="explore-content">
-        <!-- Add Categories or Topics (Element 1) -->
-        <div class="explore-categories">
+        <div class="explore-categories" data-aos="fade-right">
           <h2>Categories</h2>
           <ul>
             <li><a href="https://www.youtube.com/@mark_Ke">Lifestyle</a></li>
             <li><a href="/travel">Travel</a></li>
-            <!-- Add more categories as needed -->
           </ul>
         </div>
-
-        <!-- Add Popular Tags (Element 3) -->
-        <div class="explore-tags">
+        <div class="explore-tags" data-aos="fade-up">
           <h2>Popular Tags</h2>
           <ul>
             <li><a href="/fitness">Fitness</a></li>
-            <!-- Add more tags as needed -->
           </ul>
         </div>
-
-        <!-- Add Featured Authors (Element 8) -->
-        <div class="explore-authors">
+        <div class="explore-authors" data-aos="fade-left">
           <h2>Featured Authors</h2>
           <ul>
             <li>
-              <img src="/images/pp.jpg" alt="Author 1">
+              <img src="/images/pp.jpg" alt="Author: Mark Mwaniki" />
               <span class="author-name">Mark Mwaniki</span>
-              <span class="author-bio">Front-end developer <br> Electrical Technician <br> Fitness Instructor</span>
+              <span class="author-bio">Front-end developer<br>Electrical Technician<br>Fitness Instructor</span>
             </li>
-            <!-- Add more authors as needed -->
           </ul>
         </div>
       </div>
@@ -77,6 +78,14 @@
     <%- include('partials/footer') %>
   </footer>
 
-  <script src="/scripts/main.js"></script> <!-- Include a JavaScript file if needed -->
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script>
+    AOS.init();
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
