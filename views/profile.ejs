@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-    <title>The M's Hub</title>
-    <link rel="stylesheet" href="/styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <title>The M's Hub</title>
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <%- include('partials/navbar') %>
-    <main>
+  <%- include('partials/navbar') %>
+
+  <main>
     <section class="card profile">
-        <img src="/images/pp.jpg" alt="Profile Image">
-        <h1>Mark Mutugi M.</h1>
-        <h2>Profile</h2>
-        <p>I'm a freelance worker with a background in coding and electrical engineering, blending online and campus-based learning. <br>I'm passionate about continual learning, exploring new hobbies, and seeking personal growth opportunities.</p>
-        <section>
+      <img src="/images/pp.jpg" alt="Profile Image">
+      <h1>Mark Mutugi M.</h1>
+      <h2>Profile</h2>
+      <p>
+        I'm a freelance worker with a background in coding and electrical engineering, blending online and campus-based learning.
+        <br>
+        I'm passionate about continual learning, exploring new hobbies, and seeking personal growth opportunities.
+      </p>
+
+      <div class="social-links">
         <a href="https://www.linkedin.com/in/mark-mutugi-361362226/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3ByC4%2BKT4BS32yY3y5fwW5kA%3D%3D">LinkedIn</a>
         <a href="https://www.instagram.com/24yr8a_/">Instagram</a>
         <a href="https://github.com/cocodrift">Github</a>
-        <a href="https://www.youtube.com/@mark_Ke">youtube</a>
+        <a href="https://www.youtube.com/@mark_Ke">YouTube</a>
         <a href="https://twitter.com/freespere_/">X</a>
-        </section>
-
-        <section class="projects">
-            <h1>Projects</h1>
-            <ul>
-                <li><a href="https://mini-kibanda.vercel.app/">MiniEats Cafe</a></li>
-                <p>1. <strong>Café Website:</strong>
-                    Engaging and vibrant online presence for a café, featuring menus, events, and seamless reservations to enhance customer experience.
-                   </p>
-
-                <li><a href="https://ms-hubke.vercel.app/">M's hub KE</a></li>
-              
-              <p>  2. <strong>Portfolio Website:</strong> 
-                Stunning portfolio showcasing creative works, designed for artists and professionals to highlight achievements and attract potential clients.
-                </p>
-            </ul>
-        </section>
-        
-    <section class="ig-scan-code">
-        <img src="/images/scan2.jpg" alt="ig-scan-code" width="auto" height="200">
-        <img src="/images/scan.jpg" alt="ig-scan-code" width="auto" height="200">
+      </div>
     </section>
-    </main>
-    <%- include('partials/footer') %>
+
+    <section class="projects">
+      <h1>Projects</h1>
+      <ul>
+        <li>
+          <a href="https://mini-kibanda.vercel.app/">MiniEats Cafe</a>
+          <p><strong>1. Café Website:</strong> Engaging and vibrant online presence for a café, featuring menus, events, and seamless reservations to enhance customer experience.</p>
+        </li>
+
+        <li>
+          <a href="https://ms-hubke.vercel.app/">M's hub KE</a>
+          <p><strong>2. Portfolio Website:</strong> Stunning portfolio showcasing creative works, designed for artists and professionals to highlight achievements and attract potential clients.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="ig-scan-code">
+      <img src="/images/scan2.jpg" alt="Instagram Scan Code">
+      <img src="/images/scan.jpg" alt="Instagram Scan Code">
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
 </body>
 </html>
