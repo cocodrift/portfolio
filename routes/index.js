@@ -40,6 +40,15 @@ router.get('/fitness', (req, res, next) => {
 });
 
 
+//Books router
+router.get('/books', (req,res,next) => {
+  try {
+    res.render('books');
+} catch (error) {
+  next(error);
+}
+});
+
 
 // Error handling middleware
 router.use((err, req, res, next) => {
