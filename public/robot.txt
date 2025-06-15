@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ms-hubke.vercel.app/sitemap.xml
