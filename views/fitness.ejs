@@ -1,212 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-        <title>The M's Hub - Fitnes</title>
-        <link rel="stylesheet" href="/styles/style.css">
-        <style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+  <title>The M's Hub - Fitness</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <style>
+    @media screen and (max-width: 500px) {
+      .card {
+        width: 100%;
+      }
+      header {
+        padding: 10px;
+      }
+      .profile h1 {
+        font-size: 1.5em;
+      }
+      .profile h2 {
+        font-size: 1em;
+      }
+      .nav ul li {
+        margin-right: 10px;
+      }
+    }
 
-        @media screen and (max-width: 500px) {
-            .card {
-                width: 100%;
-            }
-            header {
-                padding: 10px;
-            }
-            .profile h1 {
-                font-size: 1.5em;
-            }
-            .profile h2 {
-                font-size: 1em;
-            }
-            .nav ul li {
-                margin-right: 10px;
-            }
-        }
+    .fitness {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      text-align: center;
+      color: #000;
+      font-size: 18px;
+    }
 
-        .fitness {
-            position: relative;
-            overflow: hidden;
-            padding: 100px 0;
-            text-align: center;
-            color: #000;
-            font-size: 18px;
-        }
+    .fitness::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      background-color: aliceblue;
+      background-size: cover;
+      background-position: center;
+      filter: blur(35px);
+      opacity: 1.7;
+      z-index: -1;
+    }
 
-        .fitness::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 30px;
-            background-color: aliceblue;
-            background-size: cover;
-            background-position: center;
-            filter: blur(35px);
-            opacity: 1.7;
-            z-index: -1;
-        }
+    .fitness h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
 
-        .fitness h2 {
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
+    .fitness h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
 
-        .fitness h3 {
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
+    .fitness ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .fitness ul {
-            list-style: none;
-            padding: 0;
-        }
+    .fitness li {
+      margin-bottom: 10px;
+    }
 
-        .fitness li {
-            margin-bottom: 10px;
-        }
+    .fitness button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-        .fitness button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    .fitness button:hover {
+      background-color: #2980b9;
+    }
 
-        .fitness button:hover {
-            background-color: #2980b9;
-        }
+    .fitness video {
+      margin-bottom: 20px;
+      max-width: 100%;
+      cursor: pointer;
+    }
 
-        .fitness video {
-            margin-bottom: 20px;
-            max-width: 100%;
-        }
+    .fitness section {
+      margin-bottom: 40px;
+    }
 
-        .fitness section {
-            margin-bottom: 40px;
-        }
+    footer {
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+    }
 
-        footer {
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
+    video {
+      width: 50%;
+    }
 
-        video {
-            width: 50%;
-        }
+    .slide {
+      background-color: lightblue;
+      border-radius: 50px;
+    }
 
-        .slide {
-            background-color: lightblue;
-            border-radius: 50px;
-        }
+    .card {
+      background-color: aliceblue;
+      color: black;
+    }
 
-        .card {
-            background-color: aliceblue;
-            color: black;
-        }
-        img {
-           max-width: 100%;
-           height: auto;
-        }
-    </style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal video {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80vh;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <%- include('partials/navbar') %>
-    <div class="fitness">
-        <section id="sales">
-          
-        </section>
+  <%- include('partials/navbar') %>
+  <div class="fitness">
+    <section id="sales"></section>
 
-        <section class="slide" id="home-workouts">
-            <h2>Home Workouts (Bodyweight)</h2>
-            <p>For most people, at-home solo workouts mean bodyweight-only exercises rather than studio classes and gym sessions that call for weights and other gear.</p>
-            <p>Bodyweight workouts can be highly effective. They challenge your form, offering opportunities for improvement without needing gear or ample space. Below are insights into top bodyweight exercises for a comprehensive strength training regimen at home.</p> 
+    <section class="slide" id="home-workouts">
+      <h2>Home Workouts (Bodyweight)</h2>
+      <p>For most people, at-home solo workouts mean bodyweight-only exercises rather than studio classes and gym sessions that call for weights and other gear.</p>
+      <p>Bodyweight workouts can be highly effective. They challenge your form, offering opportunities for improvement without needing gear or ample space. Below are insights into top bodyweight exercises for a comprehensive strength training regimen at home.</p>
 
-            <div id="prefers">
-                <h3>I Prefer </h3>
-                <h1>AIR SQUATS</h1>
-                <video autoplay loop playsinline muted aria-label="squat" src="/videos/squat.mp4"></video>
-                <div class="card">
-                    <h2>Steps</h2>
-                    <p><strong>Step 1:</strong> Stand with feet shoulder-width apart. Lower your hips downward and backward, as if sitting in a chair. Descend as far as comfortable while maintaining the natural arch of your lower back.</p>
-                    <p><strong>Step 2:</strong> Push through your feet to rise back to a standing position. Keep weight centered in your heels.</p>
-                    <p>Perform repetitions, keeping chest upright and core engaged. Feel significant engagement in lower body and abdominal muscles.</p>
-                </div>
-                <h1>PUSH-UPS</h1>
-                <video autoplay loop playsinline muted aria-label="pushup" src="/videos/pushups.mp4"></video>
-                <div class="card">
-                    <h2>Steps</h2>
-                    <p><strong>Step 1:</strong> Assume a plank position with shoulders above wrists, forming a straight line from shoulders to heels. Engage core.</p>
-                    <p><strong>Step 2:</strong> Lower body by bending elbows at a 45-degree angle.</p>
-                    <p><strong>Step 3:</strong> Push back up while maintaining a strong plank. Repeat.</p>
-                    <p>Maintain a 45-degree angle during the descent. For modification, perform with hands elevated. Increase challenge by slowing down the lowering phase.</p>
-                </div>
-                <h1>BURPEES</h1>
-                <video autoplay loop playsinline muted aria-label="burpee" src="/videos/burpee.mp4"></video>
-                <div class="card">
-                    <h2>Steps</h2>
-                    <p><strong>Step 1:</strong> Squat down, place hands on the ground, and jump feet back to a push-up position.</p>
-                    <p><strong>Step 2:</strong> Lower body to the ground, then push back up. Jump feet forward to meet hands.</p>
-                    <p><strong>Step 3:</strong> Jump up, clapping hands overhead. Land softly and repeat.</p>
-                    <p>Keep core tight and spine neutral. For modification, step instead of jumping, and come to toes at the top instead of hopping. Increase intensity by focusing on speed.</p>
-                    <h3>For more, check out our <a href="/shop/fitness/programs">Workout plans</a></h3>
-                </div>
-            </div>
+      <div id="prefers">
+        <h3>I Prefer </h3>
+        <h1>AIR SQUATS</h1>
+        <video autoplay loop playsinline muted aria-label="squat" src="/videos/squat.mp4"></video>
+        <div class="card">
+          <h2>Steps</h2>
+          <p><strong>Step 1:</strong> Stand with feet shoulder-width apart. Lower your hips downward and backward, as if sitting in a chair.</p>
+          <p><strong>Step 2:</strong> Push through your feet to rise back to a standing position. Keep weight centered in your heels.</p>
+        </div>
 
-            <div id="advantages">
-                <h3>Advantages</h3>
-                <ul>
-                    <li>Convenience and accessibility</li>
-                    <li>No need for expensive equipment</li>
-                    <li>Can be done anytime, anywhere</li>
-                </ul>
-            </div>
-            <div id="disadvantages">
-                <h3>Disadvantages</h3>
-                <ul>
-                    <li>Limited variety of exercises</li>
-                    <li>Potential lack of motivation without a gym environment</li>
-                </ul>
-            </div>
-            <p>
-                Bodyweight workouts are cost-effective, versatile, and target all major muscle groups. They can be tailored to suit any fitness level. Whether you're looking to intensify or modify your routine, consider adding these exercises to your next home workout session.
-            </p>
-        </section>
+        <h1>PUSH-UPS</h1>
+        <video autoplay loop playsinline muted aria-label="pushup" src="/videos/pushups.mp4"></video>
+        <div class="card">
+          <h2>Steps</h2>
+          <p><strong>Step 1:</strong> Assume a plank position with shoulders above wrists. Engage core.</p>
+          <p><strong>Step 2:</strong> Lower body by bending elbows at a 45-degree angle.</p>
+        </div>
 
-        <section id="weight-training">
-            <h2>Weight Training (Gym)</h2>
-            <p>Find a trainer who specializes in weight training and has experience with clients at your fitness level. They can create personalized workout plans, teach proper techniques, and provide guidance on nutrition and recovery. A good trainer will set realistic goals, track progress, and ensure safety.</p>
-            <div id="advantages">
-                <h3>Advantages</h3>
-                <ul>
-                    <li>Allows for progressive overload</li>
-                    <li>Can target specific muscle groups effectively</li>
-                    <li>Access to a wide range of equipment</li>
-                </ul>
-            </div>
-            <div id="disadvantages">
-                <h3>Disadvantages</h3>
-                <ul>
-                    <li>Requires a gym membership or access to equipment</li>
-                    <li>Potential risk of injury if not done with proper form</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-    <%- include('partials/footer') %>
+        <h1>BURPEES</h1>
+        <video autoplay loop playsinline muted aria-label="burpee" src="/videos/burpee.mp4"></video>
+        <div class="card">
+          <h2>Steps</h2>
+          <p><strong>Step 1:</strong> Squat down, place hands on the ground, and jump feet back to a push-up position.</p>
+          <p><strong>Step 2:</strong> Push up, jump forward, then jump and clap overhead.</p>
+        </div>
+      </div>
+
+      <div id="advantages">
+        <h3>Advantages</h3>
+        <ul>
+          <li>Convenience and accessibility</li>
+          <li>No need for expensive equipment</li>
+          <li>Can be done anytime, anywhere</li>
+        </ul>
+      </div>
+      <div id="disadvantages">
+        <h3>Disadvantages</h3>
+        <ul>
+          <li>Limited variety of exercises</li>
+          <li>Potential lack of motivation without a gym environment</li>
+        </ul>
+      </div>
+      <p>Bodyweight workouts are cost-effective, versatile, and target all major muscle groups. They can be tailored to suit any fitness level. Whether you're looking to intensify or modify your routine, consider adding these exercises to your next home workout session.</p>
+    </section>
+
+    <section id="weight-training">
+      <h2>Weight Training (Gym)</h2>
+      <p>Find a trainer who specializes in weight training and has experience with clients at your fitness level. They can create personalized workout plans, teach proper techniques, and provide guidance on nutrition and recovery.</p>
+      <div id="advantages">
+        <h3>Advantages</h3>
+        <ul>
+          <li>Allows for progressive overload</li>
+          <li>Can target specific muscle groups effectively</li>
+          <li>Access to a wide range of equipment</li>
+        </ul>
+      </div>
+      <div id="disadvantages">
+        <h3>Disadvantages</h3>
+        <ul>
+          <li>Requires a gym membership or access to equipment</li>
+          <li>Potential risk of injury if not done with proper form</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <span class="close">&times;</span>
+    <video id="modalVideo" controls autoplay></video>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    document.querySelectorAll('.fitness video').forEach(video => {
+      video.addEventListener('click', function () {
+        const modal = document.getElementById("videoModal");
+        const modalVideo = document.getElementById("modalVideo");
+
+        modal.style.display = "block";
+        modalVideo.src = this.src;
+        modalVideo.play();
+      });
+    });
+
+    document.querySelector('.modal .close').addEventListener('click', () => {
+      const modal = document.getElementById("videoModal");
+      const modalVideo = document.getElementById("modalVideo");
+
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    });
+
+    window.addEventListener('click', (event) => {
+      const modal = document.getElementById("videoModal");
+      const modalVideo = document.getElementById("modalVideo");
+
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+      }
+    });
+  </script>
 </body>
 </html>
