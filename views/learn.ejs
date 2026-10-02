@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    M's Hub — Fitness, Fashion, Tech & Lifestyle
+  </title>
+
+  <meta
+    name="description"
+    content="Explore fitness, fashion, technology, travel and lifestyle guides from M's Hub KE."
+  >
+
+  <link
+    rel="stylesheet"
+    href="/styles/learn.css"
+  >
+
+</head>
+
+
+<body>
+
+<header class="hub-header">
+
+  <a href="/" class="logo">
+    M's Hub KE
+  </a>
+
+  <nav>
+
+    <a href="/learn">Explore</a>
+
+    <a href="/fitness">Fitness</a>
+
+    <a href="/travel">Travel</a>
+
+    <a href="/profile">Profile</a>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <span class="eyebrow">
+      M'S HUB
+    </span>
+
+    <h1>
+      Fitness, Fashion, Tech & Lifestyle
+    </h1>
+
+    <p>
+      Practical guides, ideas and stories covering
+      the things I'm learning, using and experiencing.
+    </p>
+
+  </section>
+
+
+  <section class="categories">
+
+    <a href="/learn">
+      All
+    </a>
+
+    <a href="/learn?category=Fitness">
+      Fitness
+    </a>
+
+    <a href="/learn?category=Tech">
+      Tech
+    </a>
+
+    <a href="/learn?category=Fashion">
+      Fashion
+    </a>
+
+    <a href="/learn?category=Lifestyle">
+      Lifestyle
+    </a>
+
+    <a href="/learn?category=Travel">
+      Travel
+    </a>
+
+  </section>
+
+
+  <section class="articles">
+
+    <% if (posts.length === 0) { %>
+
+      <div class="empty">
+
+        <h2>
+          No articles yet
+        </h2>
+
+        <p>
+          New guides and articles will appear here.
+        </p>
+
+      </div>
+
+    <% } %>
+
+
+    <% posts.forEach(post => { %>
+
+      <article class="card">
+
+        <% if (post.featuredImage) { %>
+
+          <a href="/learn/<%= post.slug %>">
+
+            <img
+              src="<%= post.featuredImage %>"
+              alt="<%= post.title %>"
+              loading="lazy"
+            >
+
+          </a>
+
+        <% } %>
+
+
+        <div class="card-body">
+
+          <span class="category">
+            <%= post.category %>
+          </span>
+
+          <h2>
+
+            <a href="/learn/<%= post.slug %>">
+              <%= post.title %>
+            </a>
+
+          </h2>
+
+
+          <% if (post.excerpt) { %>
+
+            <p>
+              <%= post.excerpt %>
+            </p>
+
+          <% } %>
+
+
+          <div class="meta">
+
+            <span>
+              <%= post.author %>
+            </span>
+
+            <% if (post.publishedAt) { %>
+
+              <span>
+                <%= new Date(post.publishedAt)
+                  .toLocaleDateString('en-KE', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  }) %>
+              </span>
+
+            <% } %>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    <% }) %>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <p>
+    © <%= new Date().getFullYear() %> M's Hub KE
+  </p>
+
+</footer>
+
+</body>
+
+</html>
