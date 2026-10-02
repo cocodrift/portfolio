@@ -3,57 +3,511 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Meet Mark Mutugi M. — freelance worker with a background in coding and electrical engineering, passionate about learning, creativity and personal growth."
+  >
+
   <link rel="icon" href="/images/pp.jpg" type="image/x-icon">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-  <title>The M's Hub</title>
-  <link rel="stylesheet" href="/styles/style.css">
-</head>
-<body>
-  <%- include('partials/navbar') %>
 
-  <main>
-    <section class="card profile">
-      <img src="/images/pp.jpg" alt="Profile Image">
-      <h1>Mark Mutugi M.</h1>
-      <h2>Profile</h2>
-      <p>
-        I'm a freelance worker with a background in coding and electrical engineering, blending online and campus-based learning.
-        <br>
-        I'm passionate about continual learning, exploring new hobbies, and seeking personal growth opportunities.
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <title>About Mark — M's Hub KE</title>
+
+  <link rel="stylesheet" href="/styles/profile.css">
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAVIGATION -->
+  <header class="profile-header">
+
+    <div class="profile-header-inner">
+
+      <a href="/" class="profile-brand">
+        <span class="profile-brand-mark">M</span>
+        <span>M's Hub <strong>KE</strong></span>
+      </a>
+
+      <nav class="profile-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/learn">Articles</a>
+        <a href="/profile" class="active">About</a>
+      </nav>
+
+      <a href="/learn" class="nav-button">
+        Explore
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main id="main">
+
+    <!-- INTRO -->
+    <section class="profile-hero">
+
+      <div class="profile-hero-inner">
+
+        <div class="profile-hero-image">
+
+          <img
+            src="/images/pp.jpg"
+            alt="Mark Mutugi M."
+          >
+
+        </div>
+
+
+        <div class="profile-hero-content">
+
+          <p class="eyebrow">ABOUT THE PERSON BEHIND M'S HUB</p>
+
+          <h1>
+            Hey, I'm
+            <span>Mark.</span>
+          </h1>
+
+          <p class="intro-text">
+            I'm a freelance worker with a background in coding and
+            electrical engineering, blending online and campus-based
+            learning.
+          </p>
+
+          <div class="hero-links">
+
+            <a href="#about" class="profile-button profile-button-dark">
+              More about me
+            </a>
+
+            <a href="/learn" class="profile-button profile-button-light">
+              Read M's Hub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+
+      <div class="section-label">
+        <span>01</span>
+        ABOUT
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-heading">
+
+          <h2>
+            Curious by
+            <em>nature.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <p>
+            I'm passionate about continual learning, exploring new
+            hobbies, and seeking personal growth opportunities.
+          </p>
+
+          <p>
+            My interests sit at the intersection of technology,
+            creativity and everyday life. Coding and electrical
+            engineering have given me a technical foundation, while
+            working and learning in different environments continues
+            to shape the way I think and create.
+          </p>
+
+          <p>
+            M's Hub KE is an extension of that curiosity — a place
+            to explore ideas, share useful things and document the
+            subjects I'm interested in.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTERESTS -->
+    <section class="interests-section">
+
+      <div class="section-label">
+        <span>02</span>
+        WHAT I'M INTO
+      </div>
+
+      <div class="interest-grid">
+
+        <div class="interest-card">
+
+          <span class="interest-number">01</span>
+
+          <h3>Technology</h3>
+
+          <p>
+            Coding, digital tools, websites and exploring what
+            technology can make possible.
+          </p>
+
+        </div>
+
+
+        <div class="interest-card">
+
+          <span class="interest-number">02</span>
+
+          <h3>Learning</h3>
+
+          <p>
+            Continually developing new skills through both online
+            and campus-based learning.
+          </p>
+
+        </div>
+
+
+        <div class="interest-card">
+
+          <span class="interest-number">03</span>
+
+          <h3>Creativity</h3>
+
+          <p>
+            Building projects, experimenting with ideas and finding
+            interesting ways to bring concepts to life.
+          </p>
+
+        </div>
+
+
+        <div class="interest-card">
+
+          <span class="interest-number">04</span>
+
+          <h3>Growth</h3>
+
+          <p>
+            Exploring new hobbies, experiences and opportunities
+            that encourage personal growth.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="projects-section">
+
+      <div class="section-label">
+        <span>03</span>
+        PROJECTS
+      </div>
+
+      <div class="projects-heading">
+
+        <h2>
+          Things I've
+          <em>built.</em>
+        </h2>
+
+        <p>
+          A few projects that represent my interest in technology,
+          design and creating useful digital experiences.
+        </p>
+
+      </div>
+
+
+      <div class="projects-list">
+
+        <!-- PROJECT 01 -->
+        <article class="project">
+
+          <div class="project-number">
+            01
+          </div>
+
+          <div class="project-content">
+
+            <p class="project-type">
+              WEB PROJECT
+            </p>
+
+            <h3>
+              MiniEats Cafe
+            </h3>
+
+            <p>
+              An engaging and vibrant online presence for a café,
+              featuring menus, events and seamless reservations
+              designed to enhance the customer experience.
+            </p>
+
+            <a
+              href="https://mini-kibanda.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Visit project ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+        <article class="project">
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div class="project-content">
+
+            <p class="project-type">
+              PERSONAL PLATFORM
+            </p>
+
+            <h3>
+              M's Hub KE
+            </h3>
+
+            <p>
+              A personal content and portfolio platform built around
+              my interests, projects and ideas — now evolving into
+              a space for articles across fitness, fashion, tech,
+              lifestyle and travel.
+            </p>
+
+            <a
+              href="https://ms-hubke.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Visit M's Hub KE ↗
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOCIAL -->
+    <section class="social-section">
+
+      <div class="social-inner">
+
+        <div>
+
+          <p class="section-label">
+            04 &nbsp; FIND ME ONLINE
+          </p>
+
+          <h2>
+            Let's
+            <em>connect.</em>
+          </h2>
+
+          <p class="social-description">
+            Follow along, check out what I'm building, or simply
+            connect with me online.
+          </p>
+
+        </div>
+
+
+        <div class="social-links">
+
+          <a
+            href="https://www.linkedin.com/in/mark-mutugi-361362226/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>LinkedIn</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/24yr8a_/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Instagram</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://github.com/cocodrift"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>GitHub</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@mark_Ke"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>YouTube</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://twitter.com/freespere_/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>X</span>
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- QR CODES -->
+    <section class="qr-section">
+
+      <div class="section-label">
+        <span>05</span>
+        CONNECT IRL
+      </div>
+
+      <div class="qr-heading">
+
+        <h2>
+          Scan.
+          <em>Connect.</em>
+        </h2>
+
+        <p>
+          You can also find me through the QR codes below.
+        </p>
+
+      </div>
+
+
+      <div class="qr-grid">
+
+        <div class="qr-card">
+
+          <img
+            src="/images/scan2.jpg"
+            alt="Instagram QR code"
+            loading="lazy"
+          >
+
+          <p>
+            Instagram
+          </p>
+
+        </div>
+
+
+        <div class="qr-card">
+
+          <img
+            src="/images/scan.jpg"
+            alt="Social media QR code"
+            loading="lazy"
+          >
+
+          <p>
+            Connect
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="profile-cta">
+
+      <p class="section-label">
+        M'S HUB KE
       </p>
 
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/mark-mutugi-361362226/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3ByC4%2BKT4BS32yY3y5fwW5kA%3D%3D">LinkedIn</a>
-        <a href="https://www.instagram.com/24yr8a_/">Instagram</a>
-        <a href="https://github.com/cocodrift">Github</a>
-        <a href="https://www.youtube.com/@mark_Ke">YouTube</a>
-        <a href="https://twitter.com/freespere_/">X</a>
-      </div>
+      <h2>
+        Curious about
+        <em>what's next?</em>
+      </h2>
+
+      <a href="/learn" class="profile-button profile-button-dark">
+        Explore the articles →
+      </a>
+
     </section>
 
-    <section class="projects">
-      <h1>Projects</h1>
-      <ul>
-        <li>
-          <a href="https://mini-kibanda.vercel.app/">MiniEats Cafe</a>
-          <p><strong>1. Café Website:</strong> Engaging and vibrant online presence for a café, featuring menus, events, and seamless reservations to enhance customer experience.</p>
-        </li>
-
-        <li>
-          <a href="https://ms-hubke.vercel.app/">M's hub KE</a>
-          <p><strong>2. Portfolio Website:</strong> Stunning portfolio showcasing creative works, designed for artists and professionals to highlight achievements and attract potential clients.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="ig-scan-code">
-      <img src="/images/scan2.jpg" alt="Instagram Scan Code">
-      <img src="/images/scan.jpg" alt="Instagram Scan Code">
-    </section>
   </main>
 
-  <%- include('partials/footer') %>
+
+  <footer class="profile-footer">
+
+    <div>
+
+      <strong>M's Hub KE</strong>
+
+      <p>
+        Ideas, guides & stories for modern life.
+      </p>
+
+    </div>
+
+    <div class="footer-links">
+
+      <a href="/">Home</a>
+      <a href="/learn">Articles</a>
+      <a href="/profile">About</a>
+
+    </div>
+
+    <p class="copyright">
+      © <%= new Date().getFullYear() %> M's Hub KE
+    </p>
+
+  </footer>
+
 </body>
 </html>
