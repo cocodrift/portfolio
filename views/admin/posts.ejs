@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Posts — Ms Hub
+  </title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(1100px, 92%);
+      margin: 40px auto;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .new {
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+    }
+
+    .post {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .post h2 {
+      margin: 0 0 8px;
+    }
+
+    .post p {
+      margin: 0;
+      color: #666;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .actions a,
+    .actions button {
+      border: 0;
+      padding: 9px 12px;
+      border-radius: 7px;
+      text-decoration: none;
+      cursor: pointer;
+      background: #eee;
+      color: #111;
+    }
+
+    .published {
+      color: green;
+    }
+
+    .draft {
+      color: #888;
+    }
+
+    @media (max-width: 650px) {
+
+      .post {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<header>
+
+  <a href="/admin/posts">
+    <strong>M's Hub CMS</strong>
+  </a>
+
+  <form
+    method="POST"
+    action="/admin/logout"
+  >
+
+    <button type="submit">
+      Logout
+    </button>
+
+  </form>
+
+</header>
+
+
+<main>
+
+  <div class="top">
+
+    <div>
+
+      <h1>
+        Articles
+      </h1>
+
+      <p>
+        Create and manage your M's Hub content.
+      </p>
+
+    </div>
+
+
+    <a
+      href="/admin/posts/new"
+      class="new"
+    >
+      + New article
+    </a>
+
+  </div>
+
+
+  <% if (posts.length === 0) { %>
+
+    <div class="post">
+
+      <div>
+
+        <h2>
+          No articles yet
+        </h2>
+
+        <p>
+          Create your first article.
+        </p>
+
+      </div>
+
+    </div>
+
+  <% } %>
+
+
+  <% posts.forEach(post => { %>
+
+    <div class="post">
+
+      <div>
+
+        <h2>
+          <%= post.title %>
+        </h2>
+
+        <p>
+
+          <%= post.category %>
+
+          ·
+
+          <span
+            class="<%= post.status === 'published'
+              ? 'published'
+              : 'draft' %>"
+          >
+            <%= post.status %>
+          </span>
+
+        </p>
+
+      </div>
+
+
+      <div class="actions">
+
+        <% if (post.status === 'published') { %>
+
+          <a
+            href="/learn/<%= post.slug %>"
+            target="_blank"
+          >
+            View
+          </a>
+
+        <% } %>
+
+
+        <a
+          href="/admin/posts/<%= post._id %>/edit"
+        >
+          Edit
+        </a>
+
+
+        <form
+          method="POST"
+          action="/admin/posts/<%= post._id %>/delete"
+          onsubmit="return confirm('Delete this article?');"
+        >
+
+          <button type="submit">
+            Delete
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  <% }) %>
+
+</main>
+
+</body>
+
+</html>
