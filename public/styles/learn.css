@@ -1,0 +1,356 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #151515;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+
+/* ----------------------------------
+   Header
+---------------------------------- */
+
+.hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 6%;
+
+  background: #111;
+
+  color: white;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.hub-header nav {
+  display: flex;
+  gap: 25px;
+}
+
+.hub-header nav a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* ----------------------------------
+   Main
+---------------------------------- */
+
+main {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+
+/* ----------------------------------
+   Hero
+---------------------------------- */
+
+.hero {
+  padding: 100px 0 60px;
+  max-width: 800px;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 650px;
+}
+
+
+/* ----------------------------------
+   Categories
+---------------------------------- */
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.categories a {
+  padding: 9px 16px;
+  border-radius: 100px;
+  background: #eee;
+  color: #222;
+  text-decoration: none;
+}
+
+
+/* ----------------------------------
+   Article cards
+---------------------------------- */
+
+.articles {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+  padding-bottom: 80px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.category,
+.article-category {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card h2 {
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.card h2 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.card p {
+  color: #666;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  margin-top: 20px;
+
+  font-size: 0.85rem;
+  color: #777;
+}
+
+
+/* ----------------------------------
+   Article
+---------------------------------- */
+
+.article {
+  max-width: 800px;
+  margin: 90px auto;
+}
+
+.article h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 15px 0 25px;
+}
+
+.article-excerpt {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+.article-meta {
+  display: flex;
+  gap: 20px;
+  color: #777;
+  margin: 25px 0;
+}
+
+.article-image {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 25px 0 40px;
+}
+
+.article-content {
+  font-size: 1.1rem;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+  margin-top: 35px;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.article-content a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.article-content blockquote {
+  margin: 30px 0;
+  padding: 20px 25px;
+  border-left: 4px solid #111;
+  background: #f1f1f1;
+}
+
+
+/* ----------------------------------
+   Tags
+---------------------------------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.tags span {
+  background: #eee;
+  border-radius: 100px;
+  padding: 7px 12px;
+  font-size: 0.85rem;
+}
+
+
+/* ----------------------------------
+   Related articles
+---------------------------------- */
+
+.related {
+  padding: 60px 0 100px;
+  border-top: 1px solid #ddd;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+.related-card {
+  display: block;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+
+  color: #111;
+  text-decoration: none;
+}
+
+.related-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.related-card div {
+  padding: 18px;
+}
+
+.related-card h3 {
+  margin: 8px 0 0;
+}
+
+
+/* ----------------------------------
+   Empty state
+---------------------------------- */
+
+.empty {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+
+/* ----------------------------------
+   Footer
+---------------------------------- */
+
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+}
+
+
+/* ----------------------------------
+   Mobile
+---------------------------------- */
+
+@media (max-width: 650px) {
+
+  .hub-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hub-header nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .article {
+    margin: 60px auto;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+}
