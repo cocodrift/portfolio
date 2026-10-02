@@ -92,6 +92,19 @@
       font-size: 13px;
     }
 
+    .video-box {
+      background: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .video-box h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
     .buttons {
       display: flex;
       gap: 12px;
@@ -111,11 +124,6 @@
     .publish {
       background: #111;
       color: white;
-    }
-
-    .draft {
-      background: #ddd;
-      color: #111;
     }
 
     .cancel {
@@ -355,6 +363,55 @@ More useful information..."
       </div>
 
 
+      <!-- VIDEO -->
+
+      <div class="video-box">
+
+        <h2>
+          🎥 Video Content
+        </h2>
+
+        <div class="field">
+
+          <label for="videoTitle">
+            Video title
+          </label>
+
+          <input
+            id="videoTitle"
+            type="text"
+            name="videoTitle"
+            value="<%= post ? post.videoTitle : '' %>"
+            placeholder="Full Body Workout for Beginners"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="videoUrl">
+            YouTube video URL
+          </label>
+
+          <input
+            id="videoUrl"
+            type="url"
+            name="videoUrl"
+            value="<%= post ? post.videoUrl : '' %>"
+            placeholder="https://www.youtube.com/watch?v=XXXXXXXX"
+          >
+
+          <small class="help">
+            Paste the normal YouTube video URL.
+            The site will automatically convert it into an embedded player.
+          </small>
+
+        </div>
+
+      </div>
+
+
       <div class="grid">
 
         <div class="field">
@@ -424,7 +481,7 @@ More useful information..."
 
           <option
             value="draft"
-            <%= post && post.status === 'draft'
+            <%= !post || post.status === 'draft'
               ? 'selected'
               : '' %>
           >
