@@ -136,6 +136,11 @@ function requireAdmin(req, res, next) {
   next();
 }
 
+
+// --------------------------------------------------
+// Video URL helper
+// --------------------------------------------------
+
 function normalizeVideoUrl(url) {
   if (!url) {
     return '';
@@ -146,6 +151,8 @@ function normalizeVideoUrl(url) {
   try {
     const parsed = new URL(value);
 
+    // Standard YouTube URLs
+    // https://www.youtube.com/watch?v=VIDEO_ID
     if (
       parsed.hostname === 'www.youtube.com' ||
       parsed.hostname === 'youtube.com' ||
@@ -157,27 +164,38 @@ function normalizeVideoUrl(url) {
         return `https://www.youtube.com/embed/${videoId}`;
       }
 
+      // YouTube Shorts
+      // https://www.youtube.com/shorts/VIDEO_ID
       if (parsed.pathname.startsWith('/shorts/')) {
-        const videoId = parsed.pathname.split('/shorts/')[1];
+        const videoId = parsed.pathname
+          .split('/shorts/')[1]
+          ?.split('/')[0];
 
         if (videoId) {
           return `https://www.youtube.com/embed/${videoId}`;
         }
       }
 
+      // Already an embed URL
+      // https://www.youtube.com/embed/VIDEO_ID
       if (parsed.pathname.startsWith('/embed/')) {
         return value;
       }
     }
 
+    // Short YouTube URLs
+    // https://youtu.be/VIDEO_ID
     if (parsed.hostname === 'youtu.be') {
-      const videoId = parsed.pathname.replace('/', '');
+      const videoId = parsed.pathname
+        .replace(/^\/+/, '')
+        .split('/')[0];
 
       if (videoId) {
         return `https://www.youtube.com/embed/${videoId}`;
       }
     }
 
+    // Return other valid URLs unchanged
     return value;
 
   } catch (error) {
@@ -208,6 +226,7 @@ router.get('/', async (req, res, next) => {
       featuredPost,
       latestPosts
     });
+
   } catch (error) {
     next(error);
   }
@@ -413,6 +432,11 @@ router.post('/admin/posts', requireAdmin, async (req, res, next) => {
       category,
       tags,
       featuredImage,
+
+      // Video fields
+      videoTitle,
+      videoUrl,
+
       author,
       seoTitle,
       seoDescription,
@@ -442,19 +466,29 @@ router.post('/admin/posts', requireAdmin, async (req, res, next) => {
       excerpt,
       content,
       category,
+
       tags: tags
         ? tags
             .split(',')
             .map(tag => tag.trim().toLowerCase())
             .filter(Boolean)
         : [],
+
       featuredImage,
+
+      // Video
+      videoTitle: videoTitle?.trim() || '',
+      videoUrl: normalizeVideoUrl(videoUrl),
+
       author: author || 'M’s Hub KE',
+
       seoTitle: seoTitle || title,
       seoDescription: seoDescription || excerpt,
+
       status: status === 'published'
         ? 'published'
         : 'draft',
+
       publishedAt:
         status === 'published'
           ? new Date()
@@ -518,6 +552,11 @@ router.post(
         category,
         tags,
         featuredImage,
+
+        // Video fields
+        videoTitle,
+        videoUrl,
+
         author,
         seoTitle,
         seoDescription,
@@ -532,6 +571,86 @@ router.post(
 
       post.title = title;
       post.slug = slugify(slug || title);
+      post.excerpt = excerpt;
+      post.content = content;
+      post.category = category;
+
+      post.tags = tags
+        ? tags
+            .split(',')
+            .map(tag => tag.trim().toLowerCase())
+            .filter(Boolean)
+        : [];
+
+      post.featuredImage = featuredImage;
+
+      // Video
+      post.videoTitle = videoTitle?.trim() || '';
+      post.videoUrl = normalizeVideoUrl(videoUrl);
+
+      post.author = author || 'M’s Hub KE';
+      post.seoTitle = seoTitle || title;
+      post.seoDescription = seoDescription || excerpt;
+
+      if (
+        status === 'published' &&
+        post.status !== 'published'
+      ) {
+        post.publishedAt = new Date();
+      }
+
+      post.status =
+        status === 'published'
+          ? 'published'
+          : 'draft';
+
+      await post.save();
+
+      res.redirect('/admin/posts');
+
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+
+// --------------------------------------------------
+// DELETE POST
+// --------------------------------------------------
+
+router.post(
+  '/admin/posts/:id/delete',
+  requireAdmin,
+  async (req, res, next) => {
+    try {
+      await connectDB();
+
+      await Post.findByIdAndDelete(req.params.id);
+
+      res.redirect('/admin/posts');
+
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+
+// --------------------------------------------------
+// Error handler
+// --------------------------------------------------
+
+router.use((err, req, res, next) => {
+  console.error(err);
+
+  res.status(500).send(
+    'Something went wrong. Please try again later.'
+  );
+});
+
+
+module.exports = router;| title);
       post.excerpt = excerpt;
       post.content = content;
       post.category = category;
