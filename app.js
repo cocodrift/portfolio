@@ -1,26 +1,67 @@
+require('dotenv').config();
+
 const express = require('express');
-const mongoose = require('mongoose');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+
 const app = express();
+
 const port = process.env.PORT || 3000;
 
-// Set EJS as the view engine
+
+// ----------------------------------------
+// View engine
+// ----------------------------------------
+
 app.set('view engine', 'ejs');
 
-// Set the views directory
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.set(
+  'views',
+  path.join(__dirname, 'views')
+);
 
-// Parse incoming request bodies
+
+// ----------------------------------------
+// Middleware
+// ----------------------------------------
+
+app.use(
+  express.static(
+    path.join(__dirname, 'public')
+  )
+);
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Import routes
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+);
+
+app.use(cookieParser());
+
+
+// ----------------------------------------
+// Routes
+// ----------------------------------------
+
 const appRouter = require('./routes/index');
-app.use('/', appRouter);
- 
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.use('/', appRouter);
+
+
+// ----------------------------------------
+// Start server
+// ----------------------------------------
+
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(
+      `M's Hub is running on port ${port}`
+    );
+  });
+}
+
+
+module.exports = app;
