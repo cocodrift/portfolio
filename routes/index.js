@@ -141,9 +141,24 @@ function requireAdmin(req, res, next) {
 // Existing site routes
 // --------------------------------------------------
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
-    res.render('index');
+    await connectDB();
+
+    const posts = await Post.find({
+      status: 'published'
+    })
+      .sort({ publishedAt: -1 })
+      .limit(7)
+      .lean();
+
+    const featuredPost = posts[0] || null;
+    const latestPosts = posts.slice(1);
+
+    res.render('index', {
+      featuredPost,
+      latestPosts
+    });
   } catch (error) {
     next(error);
   }
