@@ -230,6 +230,24 @@
 
   <% } %>
 
+   <% if (post.videoUrl) { %>
+  <section class="article-video">
+    <% if (post.videoTitle) { %>
+      <h2><%= post.videoTitle %></h2>
+    <% } %>
+
+    <div class="video-wrapper">
+      <iframe
+        src="<%= post.videoUrl %>"
+        title="<%= post.videoTitle || post.title %>"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+<% } %>
+
 </main>
 
 
