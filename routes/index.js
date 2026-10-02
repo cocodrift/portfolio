@@ -151,7 +151,7 @@ function normalizeVideoUrl(url) {
   try {
     const parsed = new URL(value);
 
-    // Standard YouTube URLs
+    // Standard YouTube URL
     // https://www.youtube.com/watch?v=VIDEO_ID
     if (
       parsed.hostname === 'www.youtube.com' ||
@@ -183,7 +183,7 @@ function normalizeVideoUrl(url) {
       }
     }
 
-    // Short YouTube URLs
+    // Short YouTube URL
     // https://youtu.be/VIDEO_ID
     if (parsed.hostname === 'youtu.be') {
       const videoId = parsed.pathname
@@ -432,11 +432,8 @@ router.post('/admin/posts', requireAdmin, async (req, res, next) => {
       category,
       tags,
       featuredImage,
-
-      // Video fields
       videoTitle,
       videoUrl,
-
       author,
       seoTitle,
       seoDescription,
@@ -476,7 +473,6 @@ router.post('/admin/posts', requireAdmin, async (req, res, next) => {
 
       featuredImage,
 
-      // Video
       videoTitle: videoTitle?.trim() || '',
       videoUrl: normalizeVideoUrl(videoUrl),
 
@@ -525,7 +521,9 @@ router.get(
       res.render('admin/post-form', {
         post: {
           ...post,
-          tags: post.tags.join(', ')
+          tags: Array.isArray(post.tags)
+            ? post.tags.join(', ')
+            : ''
         },
         error: null
       });
@@ -552,11 +550,8 @@ router.post(
         category,
         tags,
         featuredImage,
-
-        // Video fields
         videoTitle,
         videoUrl,
-
         author,
         seoTitle,
         seoDescription,
@@ -584,83 +579,9 @@ router.post(
 
       post.featuredImage = featuredImage;
 
-      // Video
       post.videoTitle = videoTitle?.trim() || '';
       post.videoUrl = normalizeVideoUrl(videoUrl);
 
-      post.author = author || 'M’s Hub KE';
-      post.seoTitle = seoTitle || title;
-      post.seoDescription = seoDescription || excerpt;
-
-      if (
-        status === 'published' &&
-        post.status !== 'published'
-      ) {
-        post.publishedAt = new Date();
-      }
-
-      post.status =
-        status === 'published'
-          ? 'published'
-          : 'draft';
-
-      await post.save();
-
-      res.redirect('/admin/posts');
-
-    } catch (error) {
-      next(error);
-    }
-  }
-);
-
-
-// --------------------------------------------------
-// DELETE POST
-// --------------------------------------------------
-
-router.post(
-  '/admin/posts/:id/delete',
-  requireAdmin,
-  async (req, res, next) => {
-    try {
-      await connectDB();
-
-      await Post.findByIdAndDelete(req.params.id);
-
-      res.redirect('/admin/posts');
-
-    } catch (error) {
-      next(error);
-    }
-  }
-);
-
-
-// --------------------------------------------------
-// Error handler
-// --------------------------------------------------
-
-router.use((err, req, res, next) => {
-  console.error(err);
-
-  res.status(500).send(
-    'Something went wrong. Please try again later.'
-  );
-});
-
-
-module.exports = router;| title);
-      post.excerpt = excerpt;
-      post.content = content;
-      post.category = category;
-      post.tags = tags
-        ? tags
-            .split(',')
-            .map(tag => tag.trim().toLowerCase())
-            .filter(Boolean)
-        : [];
-      post.featuredImage = featuredImage;
       post.author = author || 'M’s Hub KE';
       post.seoTitle = seoTitle || title;
       post.seoDescription = seoDescription || excerpt;
