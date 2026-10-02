@@ -409,8 +409,35 @@ More useful information..."
 
         </div>
 
+
+
       </div>
 
+
+<div class="form-group">
+    <label for="videoTitle">Video Title</label>
+    <input
+        type="text"
+        id="videoTitle"
+        name="videoTitle"
+        value="<%= post?.videoTitle || '' %>"
+        placeholder="Video title"
+    >
+</div>
+
+<div class="form-group">
+    <label for="videoUrl">Video URL</label>
+    <input
+        type="url"
+        id="videoUrl"
+        name="videoUrl"
+        value="<%= post?.videoUrl || '' %>"
+        placeholder="https://www.youtube.com/watch?v=..."
+    >
+    <small>
+        Add a YouTube video URL to display a video on the article.
+    </small>
+</div>
 
       <div class="grid">
 
