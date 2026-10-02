@@ -49,6 +49,15 @@ const PostSchema = new mongoose.Schema(
       type: String,
       default: ''
     },
+    videoUrl: {
+  type: String,
+  default: ''
+},
+
+videoTitle: {
+  type: String,
+  default: ''
+},
 
     author: {
       type: String,
