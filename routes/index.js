@@ -1,4 +1,51 @@
-const express = require('express');
+function normalizeVideoUrl(url) {
+  if (!url) {
+    return '';
+  }
+
+  const value = url.trim();
+
+  try {
+    const parsed = new URL(value);
+
+    if (
+      parsed.hostname === 'www.youtube.com' ||
+      parsed.hostname === 'youtube.com' ||
+      parsed.hostname === 'm.youtube.com'
+    ) {
+      const videoId = parsed.searchParams.get('v');
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+
+      if (parsed.pathname.startsWith('/shorts/')) {
+        const videoId = parsed.pathname.split('/shorts/')[1];
+
+        if (videoId) {
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+      }
+
+      if (parsed.pathname.startsWith('/embed/')) {
+        return value;
+      }
+    }
+
+    if (parsed.hostname === 'youtu.be') {
+      const videoId = parsed.pathname.replace('/', '');
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+    }
+
+    return value;
+
+  } catch (error) {
+    return '';
+  }
+}const express = require('express');
 const crypto = require('crypto');
 const Post = require('../models/post');
 const connectDB = require('../config/db');
@@ -134,6 +181,55 @@ function requireAdmin(req, res, next) {
   }
 
   next();
+}
+
+function normalizeVideoUrl(url) {
+  if (!url) {
+    return '';
+  }
+
+  const value = url.trim();
+
+  try {
+    const parsed = new URL(value);
+
+    if (
+      parsed.hostname === 'www.youtube.com' ||
+      parsed.hostname === 'youtube.com' ||
+      parsed.hostname === 'm.youtube.com'
+    ) {
+      const videoId = parsed.searchParams.get('v');
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+
+      if (parsed.pathname.startsWith('/shorts/')) {
+        const videoId = parsed.pathname.split('/shorts/')[1];
+
+        if (videoId) {
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+      }
+
+      if (parsed.pathname.startsWith('/embed/')) {
+        return value;
+      }
+    }
+
+    if (parsed.hostname === 'youtu.be') {
+      const videoId = parsed.pathname.replace('/', '');
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+    }
+
+    return value;
+
+  } catch (error) {
+    return '';
+  }
 }
 
 
