@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    <%= post.seoTitle || post.title %> | M's Hub KE
+  </title>
+
+
+  <meta
+    name="description"
+    content="<%= post.seoDescription || post.excerpt || post.title %>"
+  >
+
+
+  <link
+    rel="canonical"
+    href="https://ms-hubke.vercel.app/learn/<%= post.slug %>"
+  >
+
+
+  <meta
+    property="og:type"
+    content="article"
+  >
+
+  <meta
+    property="og:title"
+    content="<%= post.seoTitle || post.title %>"
+  >
+
+  <meta
+    property="og:description"
+    content="<%= post.seoDescription || post.excerpt || post.title %>"
+  >
+
+  <meta
+    property="og:url"
+    content="https://ms-hubke.vercel.app/learn/<%= post.slug %>"
+  >
+
+
+  <% if (post.featuredImage) { %>
+
+    <meta
+      property="og:image"
+      content="<%= post.featuredImage %>"
+    >
+
+  <% } %>
+
+
+  <link
+    rel="stylesheet"
+    href="/styles/learn.css"
+  >
+
+</head>
+
+
+<body>
+
+<header class="hub-header">
+
+  <a href="/" class="logo">
+    M's Hub KE
+  </a>
+
+  <nav>
+
+    <a href="/learn">
+      Explore
+    </a>
+
+    <a href="/fitness">
+      Fitness
+    </a>
+
+    <a href="/travel">
+      Travel
+    </a>
+
+    <a href="/profile">
+      Profile
+    </a>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+  <article class="article">
+
+    <div class="article-category">
+      <%= post.category %>
+    </div>
+
+
+    <h1>
+      <%= post.title %>
+    </h1>
+
+
+    <% if (post.excerpt) { %>
+
+      <p class="article-excerpt">
+        <%= post.excerpt %>
+      </p>
+
+    <% } %>
+
+
+    <div class="article-meta">
+
+      <span>
+        By <%= post.author %>
+      </span>
+
+      <% if (post.publishedAt) { %>
+
+        <span>
+          <%= new Date(post.publishedAt)
+            .toLocaleDateString('en-KE', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            }) %>
+        </span>
+
+      <% } %>
+
+    </div>
+
+
+    <% if (post.featuredImage) { %>
+
+      <img
+        class="article-image"
+        src="<%= post.featuredImage %>"
+        alt="<%= post.title %>"
+      >
+
+    <% } %>
+
+
+    <div class="article-content">
+
+      <%- articleHtml %>
+
+    </div>
+
+
+    <% if (post.tags && post.tags.length) { %>
+
+      <div class="tags">
+
+        <% post.tags.forEach(tag => { %>
+
+          <span>
+            #<%= tag %>
+          </span>
+
+        <% }) %>
+
+      </div>
+
+    <% } %>
+
+  </article>
+
+
+  <% if (relatedPosts.length) { %>
+
+    <section class="related">
+
+      <h2>
+        More from <%= post.category %>
+      </h2>
+
+
+      <div class="related-grid">
+
+        <% relatedPosts.forEach(related => { %>
+
+          <a
+            href="/learn/<%= related.slug %>"
+            class="related-card"
+          >
+
+            <% if (related.featuredImage) { %>
+
+              <img
+                src="<%= related.featuredImage %>"
+                alt="<%= related.title %>"
+                loading="lazy"
+              >
+
+            <% } %>
+
+
+            <div>
+
+              <span>
+                <%= related.category %>
+              </span>
+
+              <h3>
+                <%= related.title %>
+              </h3>
+
+            </div>
+
+          </a>
+
+        <% }) %>
+
+      </div>
+
+    </section>
+
+  <% } %>
+
+</main>
+
+
+<footer>
+
+  <p>
+    © <%= new Date().getFullYear() %> M's Hub KE
+  </p>
+
+</footer>
+
+</body>
+
+</html>
