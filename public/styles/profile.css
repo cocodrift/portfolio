@@ -103,11 +103,11 @@ a:hover {
 }
 
 .profile-image {
-  width: 280px;
-  height: 280px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
   display: block;
-  border-radius: 50%;
+  border-radius: 70%;
   margin: 0 auto;
   filter: grayscale(10%);
 }
