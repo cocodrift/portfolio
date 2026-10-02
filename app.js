@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Request body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser()):
 
 // Routes
 const appRouter = require('./routes/index');
