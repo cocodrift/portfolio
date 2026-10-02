@@ -49,15 +49,16 @@ const PostSchema = new mongoose.Schema(
       type: String,
       default: ''
     },
-    videoUrl: {
-  type: String,
-  default: ''
-},
 
-videoTitle: {
-  type: String,
-  default: ''
-},
+    videoUrl: {
+      type: String,
+      default: ''
+    },
+
+    videoTitle: {
+      type: String,
+      default: ''
+    },
 
     author: {
       type: String,
@@ -86,12 +87,22 @@ videoTitle: {
       type: Date
     }
   },
+
   {
     timestamps: true
   }
 );
 
-PostSchema.index({ status: 1, publishedAt: -1 });
-PostSchema.index({ category: 1, status: 1 });
+
+PostSchema.index({
+  status: 1,
+  publishedAt: -1
+});
+
+PostSchema.index({
+  category: 1,
+  status: 1
+});
+
 
 module.exports = mongoose.model('Post', PostSchema);
